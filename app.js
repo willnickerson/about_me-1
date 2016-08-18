@@ -150,19 +150,23 @@ function numGuess() {
 
 numGuess();
 
-var pastResidence = 'Bellingham' || 'Pullman' || 'Honolulu' || 'Hawaii' || 'Naselle' || 'Chinook';
-for (var i = 0; i < 6; i++) {
-  pastResidence = prompt('Where have I lived, besides Vancouver, WA?');
-  if (pastResidence.toLowerCase() === 'bellingham' || 'pullman' || 'honolulu' || 'hawaii' || 'naselle' || 'chinook') {
-    alert('Correct! Great job, ' + userName + '.');
-    i = 6;
-    correctCount++;
-    console.log('The user guessed correctly. Their total score so far is ' + correctCount);
-  } else {
-    alert('Sorry, ' + userName + ', clearly you don\'t know me at all!');
-    console.log('The user guessed: ' + pastResidence + '. This is NOT one of the correct answers.');
+function oldHouse() {
+  var pastResidence = 'Bellingham' || 'Pullman' || 'Honolulu' || 'Hawaii' || 'Naselle' || 'Chinook';
+  for (var i = 0; i < 6; i++) {
+    pastResidence = prompt('Where have I lived, besides Vancouver, WA?');
+    if (pastResidence.toLowerCase() === 'bellingham' || 'pullman' || 'honolulu' || 'hawaii' || 'naselle' || 'chinook') {
+      alert('Correct! Great job, ' + userName + '.');
+      i = 6;
+      correctCount++;
+      console.log('The user guessed correctly. Their total score so far is ' + correctCount);
+    } else {
+      alert('Sorry, ' + userName + ', clearly you don\'t know me at all!');
+      console.log('The user guessed: ' + pastResidence + '. This is NOT one of the correct answers.');
+    }
   }
-};
-alert('I\'ve lived in Bellingham, Pullman, Honolulu, Hawaii, Naselle, and Chinook.');
+  alert('I\'ve lived in Bellingham, Pullman, Honolulu, Hawaii, Naselle, and Chinook.');
+}
+
+oldHouse();
 
 alert('Total correct: ' + correctCount + ' out of 2. Great job, ' + userName);
