@@ -1,6 +1,6 @@
 'use strict';
 
-var beginQuestionAnswer = prompt('My cat\'s name is Raj. Do you have any pets?');
+var beginQuestionAnswer = prompt('Hello! You look like an animal lover. Do you have any pets?');
 
 if(beginQuestionAnswer.toLowerCase() === 'yes' || beginQuestionAnswer.toLowerCase() === 'y') {
   console.log('The user has a pet.');
@@ -112,3 +112,48 @@ if(beginQuestionAnswer.toLowerCase() === 'yes' || beginQuestionAnswer.toLowerCas
     }
   }
 };
+
+var correctCount = 0;
+
+var randomNum = Math.floor(Math.random() * 10) + 1;
+console.log('the number is:', randomNum);
+
+alert('Let\'s move on. Let\'s play a game.');
+
+var userName = prompt('First, I\'ll need your name.');
+
+for (var i = 0; i < 4; i++) {
+  var userGuess = prompt( 'Guess a number from 1-10' );
+  userGuess = Number(userGuess);
+  console.log('User guess is:', userGuess);
+
+  if (randomNum === userGuess) {
+    alert('You got it! Good job, ' + userName + '.');
+    console.log('The user guessed correctly. Their total score on this game so far is 1.');
+    i = 4;
+    correctCount++;
+  } else if (randomNum > userGuess) {
+    alert('Too low.');
+    console.log('The user\'s guess was too low.');
+  } else {
+    alert('Too high.');
+    console.log('The user\'s guess was too high.');
+  };
+}
+
+var pastResidence = 'Bellingham' || 'Pullman' || 'Honolulu' || 'Hawaii' || 'Naselle' || 'Chinook';
+for (i = 0; i < 6; i++) {
+  pastResidence = prompt('Where have I lived, besides Vancouver, WA?');
+  if (pastResidence.toLowerCase() === 'bellingham' || 'pullman' || 'honolulu' || 'hawaii' || 'naselle' || 'chinook') {
+    alert('Correct! Great job, ' + userName + '.');
+    i = 6;
+    correctCount++;
+    console.log('The user guessed correctly. Their total score so far is ' + correctCount);
+  } else {
+    alert('Sorry, ' + userName + ', clearly you don\'t know me at all!');
+    console.log('The user guessed: ' + pastResidence + '. This is NOT one of the correct answers.');
+  }
+};
+alert('I\'ve lived in Bellingham, Pullman, Honolulu, Hawaii, Naselle, and Chinook.');
+
+alert('Total correct: ' + correctCount + ' out of 2. Great job, ' + userName);
