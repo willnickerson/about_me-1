@@ -119,6 +119,7 @@ petQuestions();
 
 var correctCount = 0;
 
+
 var randomNum = Math.floor(Math.random() * 10) + 1;
 console.log('the number is:', randomNum);
 
@@ -126,27 +127,31 @@ alert('Let\'s move on. Let\'s play a game.');
 
 var userName = prompt('First, I\'ll need your name.');
 
-for (var i = 0; i < 4; i++) {
-  var userGuess = prompt( 'Guess a number from 1-10' );
-  userGuess = Number(userGuess);
-  console.log('User guess is:', userGuess);
+function numGuess() {
+  for (var i = 0; i < 4; i++) {
+    var userGuess = prompt( 'Guess a number from 1-10' );
+    userGuess = Number(userGuess);
+    console.log('User guess is:', userGuess);
 
-  if (randomNum === userGuess) {
-    alert('You got it! Good job, ' + userName + '.');
-    console.log('The user guessed correctly. Their total score on this game so far is 1.');
-    i = 4;
-    correctCount++;
-  } else if (randomNum > userGuess) {
-    alert('Too low.');
-    console.log('The user\'s guess was too low.');
-  } else {
-    alert('Too high.');
-    console.log('The user\'s guess was too high.');
-  };
+    if (randomNum === userGuess) {
+      alert('You got it! Good job, ' + userName + '.');
+      console.log('The user guessed correctly. Their total score on this game so far is 1.');
+      i = 4;
+      correctCount++;
+    } else if (randomNum > userGuess) {
+      alert('Too low.');
+      console.log('The user\'s guess was too low.');
+    } else {
+      alert('Too high.');
+      console.log('The user\'s guess was too high.');
+    }
+  }
 }
 
+numGuess();
+
 var pastResidence = 'Bellingham' || 'Pullman' || 'Honolulu' || 'Hawaii' || 'Naselle' || 'Chinook';
-for (i = 0; i < 6; i++) {
+for (var i = 0; i < 6; i++) {
   pastResidence = prompt('Where have I lived, besides Vancouver, WA?');
   if (pastResidence.toLowerCase() === 'bellingham' || 'pullman' || 'honolulu' || 'hawaii' || 'naselle' || 'chinook') {
     alert('Correct! Great job, ' + userName + '.');
